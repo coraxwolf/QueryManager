@@ -1,0 +1,72 @@
+﻿<Window x:Class="QueryTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QueryTool"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="{StaticResource monarch-sunshine}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- AppBar -->
+        <Grid Grid.Row="0" Background="{StaticResource battleshipBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Image 
+                Grid.Column="0" 
+                Height="64"
+                Source="\Resoruces\HCCLogo.png"/>
+            <TextBlock
+                Grid.Column="1"
+                Margin="10"
+                Padding="5"
+                FontFamily="{StaticResource Heading}"
+                FontSize="32"
+                FontWeight="Bold"
+                Text="Query Manager"/>
+        </Grid> 
+        <!-- Commands  -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button
+                Background="{StaticResource memoralgreenBrush}"
+                Padding="10"
+                Margin="10"
+                FontFamily="{StaticResource Heading}"
+                FontSize="24"
+                FontWeight="SemiBold"
+                Content="Load Query"/>
+            <Button
+                Background="{StaticResource bluebonnetBrush}"
+                Padding="10"
+                Margin="10"
+                FontFamily="{StaticResource Heading}"
+                FontSize="24"
+                FontWeight="SemiBold"
+                Content="Download Changes"/>
+        </StackPanel>
+        <!-- Status  -->
+
+        <!-- Change Log -->
+        <DataGrid
+            Grid.Row="3"
+            CanUserAddRows="False"/>
+        <!-- Footer -->
+        <TextBlock Grid.Row="4"
+            FontFamily="{StaticResource Heading}"
+            FontSize="20"
+            FontWeight="SemiBold"
+            Padding="10"
+            Text="Houston Community College | Online College"/>
+
+    </Grid>
+</Window>
