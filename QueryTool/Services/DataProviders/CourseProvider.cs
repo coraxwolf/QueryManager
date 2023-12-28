@@ -50,7 +50,7 @@ namespace QueryTool.Services.DataProviders
     }
     public async Task<IEnumerable<Course>> GetAllCourses()
     {
-      using ( var context = new CourseContext() )
+      using ( CourseContext context = courseContext )
       {
         IEnumerable<CourseRecord> courses = await context.Courses.ToListAsync();
         return courses.Select(r => RecordToCourse(r));

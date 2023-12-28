@@ -10,12 +10,13 @@ namespace QueryTool.Data
 {
   public class CourseContext : DbContext
   {
+    public CourseContext(DbContextOptions<CourseContext> options) : base(options) { }
     public DbSet<CourseRecord> Courses { get; set; }
     public DbSet<FacultyRecord> Faculty {  get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-      optionsBuilder.UseSqlite("Data Source=courses.db");
+      // optionsBuilder.UseSqlite("Data Source=courses.db");
       base.OnConfiguring(optionsBuilder);
     }
   }
